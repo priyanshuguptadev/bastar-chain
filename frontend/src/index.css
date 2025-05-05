@@ -1,0 +1,169 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 100% 96.9%;
+    --foreground: 25 76.9% 26.1%;
+
+    --card: 60 56% 91%;
+    --card-foreground: 25 76.9% 26.1%;
+
+    --popover: 48 100% 96.9%;
+    --popover-foreground: 25 76.9% 26.1%;
+
+    --primary: 25 76.9% 30.9%;
+    --primary-foreground: 60 56% 97%;
+
+    --secondary: 26 67.2% 45.9%;
+    --secondary-foreground: 60 56% 97%;
+
+    --muted: 60 56% 91%;
+    --muted-foreground: 25 76.9% 40%;
+
+    --accent: 33 53.3% 53.1%;
+    --accent-foreground: 60 56% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 33 53.3% 83.1%;
+    --input: 33 53.3% 83.1%;
+    --ring: 33 53.3% 53.1%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 48 100% 96.9%;
+    --sidebar-foreground: 25 76.9% 26.1%;
+    --sidebar-primary: 25 76.9% 30.9%;
+    --sidebar-primary-foreground: 60 56% 97%;
+    --sidebar-accent: 33 53.3% 83.1%;
+    --sidebar-accent-foreground: 25 76.9% 26.1%;
+    --sidebar-border: 33 53.3% 83.1%;
+    --sidebar-ring: 33 53.3% 53.1%;
+  }
+
+  .dark {
+    --background: 25 76.9% 8%;
+    --foreground: 60 56% 91%;
+
+    --card: 25 76.9% 12%;
+    --card-foreground: 60 56% 91%;
+
+    --popover: 25 76.9% 8%;
+    --popover-foreground: 60 56% 91%;
+
+    --primary: 33 53.3% 53.1%;
+    --primary-foreground: 60 56% 97%;
+
+    --secondary: 26 67.2% 45.9%;
+    --secondary-foreground: 60 56% 97%;
+
+    --muted: 25 76.9% 16%;
+    --muted-foreground: 60 56% 70%;
+
+    --accent: 33 53.3% 53.1%;
+    --accent-foreground: 60 56% 97%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 76.9% 16%;
+    --input: 25 76.9% 16%;
+    --ring: 33 53.3% 53.1%;
+
+    --sidebar-background: 25 76.9% 8%;
+    --sidebar-foreground: 60 56% 91%;
+    --sidebar-primary: 33 53.3% 53.1%;
+    --sidebar-primary-foreground: 60 56% 97%;
+    --sidebar-accent: 25 76.9% 16%;
+    --sidebar-accent-foreground: 60 56% 91%;
+    --sidebar-border: 25 76.9% 16%;
+    --sidebar-ring: 33 53.3% 53.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  .bastar-input {
+    @apply w-full px-4 py-2 rounded-md border border-bastar-peru/30 bg-white/90 dark:bg-gray-800/90 focus:border-bastar-peru focus:ring-1 focus:ring-bastar-peru focus:outline-none transition-all duration-200 backdrop-blur-sm;
+  }
+  
+  .bastar-label {
+    @apply block text-sm font-medium text-bastar-brown dark:text-bastar-cornsilk mb-1;
+  }
+  
+  .bastar-btn-primary {
+    @apply bg-gradient-to-r from-bastar-brown to-bastar-chocolate text-white px-4 py-2 rounded-md hover:from-bastar-chocolate hover:to-bastar-brown transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-bastar-peru/50 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-md;
+  }
+  
+  .bastar-btn-secondary {
+    @apply bg-gradient-to-r from-bastar-peru to-bastar-peru/90 text-white px-4 py-2 rounded-md hover:from-bastar-peru/90 hover:to-bastar-peru transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-bastar-peru/50 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-md;
+  }
+  
+  .bastar-card {
+    @apply bg-white/80 dark:bg-gray-800/40 backdrop-blur-md rounded-lg shadow-xl p-6 border border-bastar-peru/20 dark:border-bastar-peru/10 hover:shadow-2xl transition-all duration-300;
+  }
+  
+  .web3-container {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-tr before:from-bastar-brown/10 before:to-bastar-peru/5 before:z-0 dark:before:from-bastar-brown/20 dark:before:to-bastar-peru/10;
+  }
+  
+  .web3-card {
+    @apply backdrop-blur-lg bg-white/60 dark:bg-gray-800/40 border border-bastar-peru/20 dark:border-bastar-brown/30 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .hex-pattern {
+    @apply relative after:absolute after:inset-0 after:bg-[url('/hex-pattern.svg')] after:opacity-5 dark:after:opacity-10 after:bg-repeat after:z-0;
+  }
+  
+  .form-error {
+    @apply text-red-600 dark:text-red-400 text-sm mt-1;
+  }
+  
+  .blockchain-border {
+    @apply relative border border-bastar-peru/30 dark:border-bastar-peru/50 rounded-lg overflow-hidden;
+    background: linear-gradient(90deg, rgba(205,133,63,0.1) 0%, rgba(139,69,19,0.1) 25%, rgba(205,133,63,0.1) 50%, rgba(139,69,19,0.1) 75%, rgba(205,133,63,0.1) 100%);
+    background-size: 400% 100%;
+    animation: gradient-animation 15s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  .glow-effect {
+    box-shadow: 0 0 10px rgba(205, 133, 63, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .glow-effect:hover {
+    box-shadow: 0 0 20px rgba(205, 133, 63, 0.5);
+  }
+}
